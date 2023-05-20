@@ -1,3 +1,6 @@
+
+from typing import List
+
 class Solution:
     def calcEquation(self, equations: List[List[str]], values: List[float], queries: List[List[str]]) -> List[float]:
         
@@ -18,7 +21,6 @@ class Solution:
                     graph[divisor]=[(divident,(1/quotient))]
                 else:
                     graph[divisor].append((divident,(1/quotient)))
-        buildgraph()
         
         def dfs(start,end):
             
@@ -34,7 +36,7 @@ class Solution:
             
             return -1.0
             
-
+        buildgraph()
         for i in queries:
             visited=set()
             res.append(dfs(i[0],i[1]))
