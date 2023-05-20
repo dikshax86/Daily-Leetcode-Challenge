@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 from typing import List
+=======
+
+from typing import List
+
+>>>>>>> ab60aa621108bdbc448b720ed2eb1bf893a6d9a5
 class Solution:
     def calcEquation(self, equations: List[List[str]], values: List[float], queries: List[List[str]]) -> List[float]:
         
