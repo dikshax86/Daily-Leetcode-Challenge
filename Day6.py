@@ -4,6 +4,8 @@ from typing import List
 class Solution:
     def maxScore(self, nums1: List[int], nums2: List[int], k: int) -> int:
         heap=[]
+
+        #total_sum
         total_sum=0
         ans=0
         

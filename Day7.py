@@ -4,6 +4,7 @@ class Solution:
         
         dp=[1.0]+[0.0]*n
         
+        #store total value sum
         total,res=1.0,0.0
         
         for i in range(1,n+1):
