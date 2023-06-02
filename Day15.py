@@ -1,6 +1,6 @@
 from collections import defaultdict
 from typing import List
-
+#main
 class Solution:
     def maximumDetonation(self, bombs: List[List[int]]) -> int:
         n,max_detonated_bombs,graph=len(bombs),0,defaultdict(list)
