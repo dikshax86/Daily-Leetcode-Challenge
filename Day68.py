@@ -1,27 +1,26 @@
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
+from typing import Collection, Optional
 
-from tkinter.tix import ListNoteBook
-from typing import Optional
 
+# Definition for a Node.
+class Node:
+    def __init__(self, x: int, next: 'Node' = None, random: 'Node' = None):
+        self.val = int(x)
+        self.next = next
+        self.random = random
 
 class Solution:
-    def hasCycle(self, head: Optional[ListNoteBook]) -> bool:
+    def copyRandomList(self, head: 'Optional[Node]') -> 'Optional[Node]':
         
-        if not head or not head.next:return False
+        dic=Collection.defaultdict(lambda: Node(0))
+        dic[None]=None
+        n=head
+        fake=n
         
-        slow=head
-        fast=head.next
-        
-        while fast and fast.next:
+        while n:
             
-            if slow==fast:return True
+            dic[n].val=n.val
+            dic[n].next=dic[n.next]
+            dic[n].random=dic[n.random]
+            n=n.next
             
-            slow=slow.next
-            fast=fast.next.next
-            
-        return False
-            
+        return dic[fake]
